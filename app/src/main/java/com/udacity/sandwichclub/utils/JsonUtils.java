@@ -38,9 +38,11 @@ public class JsonUtils {
             //other names and ingredients are JSON Arrrays
             JSONArray otherNames = nameObj.optJSONArray("alsoKnownAs");
             List<String> otherNamesList = new ArrayList<>();
+
             for (int i = 0; i < otherNames.length(); i++) {
                 String alsoKnownAs = otherNames.optString(i);
                 otherNamesList.add(alsoKnownAs);
+
             }
 
             JSONArray ingredientsArray = sandwichObject.optJSONArray("ingredients");
@@ -50,7 +52,9 @@ public class JsonUtils {
                 ingredientsList.add(ingredients.toString());
             }
 
-            //Make sure JSON is bring parsed correctly
+
+
+            //Make sure JSON is being parsed correctly
             Log.v("name_tag", "Primary Name is: " + primaryName);
             Log.v("origin_tag", "Origin is: " + origin);
             Log.v("image_tag", "Image is: " + img);

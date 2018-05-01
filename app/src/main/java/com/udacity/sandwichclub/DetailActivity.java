@@ -94,14 +94,15 @@ public class DetailActivity extends AppCompatActivity {
 
     //special method to return separate strings instead of the array as one whole string with brackets
     public String loopThroughListForSeparateStrings(List<String> string) {
-        String list = "";
-        for(int i = 0; i < string.size(); i++) {
-            list += string.get(i);
-            if (i < string.size() - 1)
-                list += ", ";
-        }
-        return list;
+       StringBuilder builder = new StringBuilder();
+
+       for (String parsedString : string){
+           builder.append("-" + parsedString + "\n");
+       }
+        return builder.toString();
+
     }
+
 
 
 }
